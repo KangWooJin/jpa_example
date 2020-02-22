@@ -1,5 +1,8 @@
 package me.blog.jpa.model.embedded;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.AttributeOverrides;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,4 +16,12 @@ public class UserProfile {
 
     @Embedded
     PrivateData privateData;
+
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "address", column = @Column(name = "office_address")),
+            @AttributeOverride(name = "phoneNumber", column = @Column(name = "office_phone_number")),
+            @AttributeOverride(name = "email", column = @Column(name = "office_email"))
+    })
+    PrivateData officePrivateData;
 }
