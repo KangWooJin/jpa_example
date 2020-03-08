@@ -63,6 +63,7 @@ class testSave {
     @Test
     void cascadeTest() {
         Team team = new Team();
+        em.persist(team);
         Member member = new Member();
         member.setTeam(team);
         em.persist(member);

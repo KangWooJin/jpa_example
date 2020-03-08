@@ -40,7 +40,7 @@ class EmbeddedTest {
 
         System.out.println("firstAdmin address: " + firstAdminResult.getPrivateData().getAddress());
         System.out.println("secondAdmin address: " + secondAdminResult.getPrivateData().getAddress());
-        assertThat(firstAdminResult.getPrivateData().getAddress()).isEqualTo("서울");
+        assertThat(firstAdminResult.getPrivateData().getAddress()).isEqualTo("인천");
         assertThat(secondAdminResult.getPrivateData().getAddress()).isEqualTo("인천");
     }
 }
